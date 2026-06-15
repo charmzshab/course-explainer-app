@@ -22,6 +22,14 @@ class AppTestCase(unittest.TestCase):
         self.assertIn(b'Data Science Fundamentals', response.data)
         self.assertIn(b'Go Programming Essentials', response.data)
 
+    def test_hero_section_present(self):
+        """Test that hero section exists with expected content"""
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'hero-section', response.data)
+        self.assertIn(b'Expand Your Knowledge', response.data)
+        self.assertIn(b'Explore Courses', response.data)
+
     def test_course(self):
         response = self.app.get('/course/1')
         self.assertEqual(response.status_code, 200)
