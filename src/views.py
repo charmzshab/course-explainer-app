@@ -1,5 +1,5 @@
 from flask import render_template, request
-from models import courses
+from models import courses, PLAYLIST_EMBED_URL
 import re
 
 def index():
@@ -13,6 +13,9 @@ def course(course_id):
         return render_template('course.html', course=selected_course)
     else:
         return "Course not found", 404
+
+def videos():
+    return render_template('videos.html', playlist_embed_url=PLAYLIST_EMBED_URL)
 
 def contact():
     """Handle contact form display and submission"""

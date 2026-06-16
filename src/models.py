@@ -19,3 +19,6 @@ courses = [
     Course("Go Programming Essentials", "Master Go programming language from basics to advanced concepts.", "Robert Chen", "5 weeks",
            ["Go Basics and Syntax", "Goroutines and Concurrency", "Channels and Synchronization", "Web Services with Go", "Testing and Deployment"]),
 ]
+
+PLAYLIST_ID = "PL-HoEl0ZEUlKDm-ws2KQP8np-4Km7MSda"
+PLAYLIST_EMBED_URL = f"https://www.youtube.com/embed/videoseries?list={PLAYLIST_ID}"

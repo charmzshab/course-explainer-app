@@ -41,6 +41,22 @@ class AppTestCase(unittest.TestCase):
         self.assertIn(b'Go Programming Essentials', response.data)
         self.assertIn(b'Robert Chen', response.data)
 
+    # Videos Page Tests
+    def test_videos_page_loads(self):
+        """Test that videos page returns 200 and embeds the playlist"""
+        response = self.app.get('/videos')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Video Lessons', response.data)
+        self.assertIn(b'youtube.com/embed/videoseries', response.data)
+        self.assertIn(b'PL-HoEl0ZEUlKDm-ws2KQP8np-4Km7MSda', response.data)
+
+    def test_nav_includes_videos_link(self):
+        """Test that the Videos nav link appears on the home page"""
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'/videos', response.data)
+        self.assertIn(b'Videos', response.data)
+
     # Contact Page Tests
     def test_contact_page_loads(self):
         """Test that contact page returns 200 status"""

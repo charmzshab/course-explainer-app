@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Videos - Course Explainer{% endblock %}
+
+{% block content %}
+<section class="videos-section">
+  <div class="videos-container">
+    <h2 class="section-title">Video Lessons</h2>
+    <p class="videos-intro">Watch our full playlist of teaching videos below.</p>
+    <div class="video-embed-wrapper">
+      <iframe
+        src="{{ playlist_embed_url }}"
+        title="Course Explainer video playlist"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}
